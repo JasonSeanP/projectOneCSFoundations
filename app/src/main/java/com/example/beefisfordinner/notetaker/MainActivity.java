@@ -8,13 +8,19 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import java.io.OutputStreamWriter;
 
 public class MainActivity extends AppCompatActivity {
 
+    EditText EditText1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        EditText1 = (EditText)findViewById(R.id.EditText1);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -22,10 +28,22 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Your Personal Note Has Been Saved!", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
+    }
+
+    public void Save(String fileName) {
+        try {
+            OutputStreamWriter out =
+                    new OutputStreamWriter(openFileOutput(fileName, 0));
+            out.write(String.valueOf(EditText1));
+            out.close();
+            Toast.makeText(this, "Note Saved!", Toast.LENGTH_SHORT).show();
+        } catch (Throwable t) {
+            Toast.makeText(this, "Exception: " + t.toString(), Toast.LENGTH_LONG).show();
+        }
     }
 
     @Override
