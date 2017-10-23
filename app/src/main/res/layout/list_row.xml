@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
+    <!--For each row of notes, it will show the title of the item and a brief content of it as well.-->
     <TextView
         android:id="@+id/title"
         android:textSize="16dp"

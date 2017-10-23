@@ -22,12 +22,15 @@ import java.util.List;
  * Created by BeefIsForDinner on 10/22/17.
  */
 
+//Public declaration of the class to select the notes
 public class NoteSelect extends AppCompatActivity {
 
+    //Private variable declaration
     private List<NotesBuilder> notesList = new ArrayList<>();
     private NotesAdapter nAdapter;
     private RecyclerView notesRecycler;
 
+    //On create, load all files that have been saved and then prepare for selection
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,6 +60,7 @@ public class NoteSelect extends AppCompatActivity {
 
     }
 
+    //Private function to prepare the notes in the list
     private void prepareNotes() {
         File directory;
         directory = getFilesDir();
@@ -70,6 +74,7 @@ public class NoteSelect extends AppCompatActivity {
 
     }
 
+    //When selected, open the note and its contents
     public String Open(String fileName) {
         String content = "";
         try {
