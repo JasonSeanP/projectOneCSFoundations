@@ -37,7 +37,7 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
         this.notesList = notesList;
     }
 
-    //Placeholder
+    //Basically "inflates" the view
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
