@@ -47,7 +47,9 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    //Funciton to save string from the note we wrote down
+
+
+    //Function to save string from the note we wrote down
     public void Save(String fileName) {
         try {
             OutputStreamWriter out =
