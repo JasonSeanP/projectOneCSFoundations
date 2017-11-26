@@ -12,8 +12,8 @@
     <EditText
         android:id="@+id/EditText1"
         android:layout_width="383dp"
-        android:layout_height="510dp"
-        android:hint="Type here to start a note..."
+        android:layout_height="522dp"
+        android:hint="@string/type_here_to_start_a_note"
         android:gravity="top"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
