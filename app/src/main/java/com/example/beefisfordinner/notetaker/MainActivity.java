@@ -41,19 +41,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         rotate_forward = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.rotate_forward);
         rotate_backward = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.rotate_backward);
         fab1.setOnClickListener(this);
-        fab2.setOnClickListener(this);
-        fab3.setOnClickListener(this);
-        //New Code
 
-        /*
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab); //Declaring our FAB (Save icon)
-        fab.setOnClickListener(new View.OnClickListener() { //When button is clicked...
-            @Override
-            public void onClick(View view) { //Call the save function for saving the note
-                Save("Note1.txt");
+        //Fab2 deletes all text entered
+        fab2.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                findViewById(R.id.EditText1);
+                EditText1.setText("");
             }
         });
-        */
+
+        //Fab3 saves all text entered
+        fab3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Save("Note1.txt");
+            }
+                                });
         EditText1 = (EditText) findViewById(R.id.EditText1); //Set EditText1 variable to the one we called in the content_main
         EditText1.setText(Open("Note1.txt"));
     }
